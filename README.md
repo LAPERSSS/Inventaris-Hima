@@ -290,16 +290,3 @@ Hanya **PSDO** yang boleh mengubah data. Halaman yang mengubah data wajib memaka
 
 **Mengembalikan data contoh ke awal:** impor ulang `inventaris_hima.sql`. File ini otomatis menghapus
 tabel lama lalu membuatnya kembali.
-
----
-
-## Anggota Kelompok 5
-
-| Nama                 | NIM        |
-|----------------------|------------|
-| Naila Aulia Rahma    | 2404130026 |
-| Selma Prakusya       | 2404130028 |
-| Lanang Arif Prabowo  | 2404130106 |
-| Fadli Nugraha Asfino | 2404130183 |
-
-Dosen pengampu: Ir. Jumanto, S.Kom., M.Cs.
