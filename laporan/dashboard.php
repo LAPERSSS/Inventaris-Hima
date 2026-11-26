@@ -41,6 +41,14 @@ $kartu = [
 ];
 ?>
 
+<?php $nAju = jumlah_pengajuan_menunggu($pdo); if ($nAju): ?>
+  <a href="<?= url('pengajuan/index.php') ?>" class="alert alert-warning d-flex align-items-center gap-2 text-decoration-none">
+    <i class="bi bi-inbox fs-5"></i>
+    <span><strong><?= $nAju ?> pengajuan peminjaman</strong> dari katalog publik menunggu diproses.</span>
+    <span class="ms-auto fw-semibold">Lihat <i class="bi bi-arrow-right"></i></span>
+  </a>
+<?php endif; ?>
+
 <!-- ============ KARTU RINGKASAN ============ -->
 <div class="row g-3 mb-4">
   <?php foreach ($kartu as [$label, $nilai, $kecil, $icon, $tone]): ?>

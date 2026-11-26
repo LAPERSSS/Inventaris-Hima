@@ -14,6 +14,7 @@ $menu = [
     ['barang',      'Data Barang',      'barang/index.php',      'bi-box-seam',         ['psdo','bph','ketua'], 'Inventaris'],
     ['kategori',    'Kategori',         'kategori/index.php',    'bi-tags',             ['psdo'],               'Inventaris'],
     ['transaksi',   'Masuk & Keluar',   'transaksi/index.php',   'bi-arrow-left-right', ['psdo','bph','ketua'], 'Inventaris'],
+    ['pengajuan',   'Pengajuan',        'pengajuan/index.php',   'bi-inbox',            ['psdo','bph','ketua'], 'Layanan'],
     ['peminjaman',  'Peminjaman',       'peminjaman/index.php',  'bi-journal-arrow-up', ['psdo','bph','ketua'], 'Layanan'],
     ['pemeriksaan', 'Pemeriksaan',      'pemeriksaan/index.php', 'bi-clipboard-check',  ['psdo','bph','ketua'], 'Layanan'],
     ['arsip',       'Arsip Periode',    'arsip/index.php',       'bi-archive',          ['psdo','bph','ketua'], 'Layanan'],
@@ -23,6 +24,7 @@ $namaBulan = ['','Januari','Februari','Maret','April','Mei','Juni','Juli','Agust
 $hari  = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
 $hariIni = $hari[date('w')] . ', ' . date('j') . ' ' . $namaBulan[(int)date('n')] . ' ' . date('Y');
 $inisial = strtoupper(mb_substr($u['nama'], 0, 1));
+$jmlMenunggu = jumlah_pengajuan_menunggu($pdo);
 ?>
 <!doctype html>
 <html lang="id">
@@ -59,6 +61,7 @@ $inisial = strtoupper(mb_substr($u['nama'], 0, 1));
           <?php endif; ?>
         <a class="menu-link <?= $active === $key ? 'active' : '' ?>" href="<?= url($path) ?>">
           <i class="bi <?= $icon ?>"></i><span><?= e($label) ?></span>
+          <?php if ($key === 'pengajuan' && $jmlMenunggu): ?><span class="menu-badge"><?= $jmlMenunggu ?></span><?php endif; ?>
         </a>
       <?php endforeach; ?>
     </nav>

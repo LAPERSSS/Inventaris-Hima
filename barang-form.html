@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tambah barang | Inventaris HIMA Ilkom UNNES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<input type="checkbox" id="menu" class="menu-toggle" aria-label="Buka menu">
+<div class="app">
+<label class="scrim" for="menu"></label>
+<aside class="sidebar">
+  <a class="brand" href="index.html"><span class="brand-mark">IK</span><span class="brand-name">Inventaris HIMA<small>Ilmu Komputer UNNES</small></span></a>
+  <nav class="nav" aria-label="Menu utama"><div class="nav-group">Ringkasan</div><a href="index.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>Dashboard</span></a><div class="nav-group">Inventaris</div><a href="barang.html" aria-current="page"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><span>Barang</span></a><a href="kategori.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1"/></svg><span>Kategori</span></a><a href="transaksi.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg><span>Transaksi barang</span></a><div class="nav-group">Peminjaman</div><a href="peminjaman.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M8 7V4h8v3M4 12h16"/></svg><span>Peminjaman</span></a><a href="peminjam.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 5a3.5 3.5 0 010 7M18 14.8c1.8.7 3 2.3 3.5 5.2"/></svg><span>Peminjam</span></a><div class="nav-group">Pemeriksaan</div><a href="pemeriksaan.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12l2 2 4-4"/></svg><span>Pemeriksaan</span></a><div class="nav-group">Organisasi</div><a href="periode.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Periode kepengurusan</span></a><a href="arsip.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9M10 13h4"/></svg><span>Arsip inventaris</span></a><a href="pengguna.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-4 3.7-6 8-6s7.3 2 8 6"/></svg><span>Pengguna</span></a></nav>
+  <div class="side-foot"><strong>Periode 2026/2027</strong>Aktif sampai 31 Jan 2027</div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <label for="menu" class="menu-btn" aria-label="Menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></label>
+    <form class="search" role="search" action="barang.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input type="search" name="q" placeholder="Cari barang atau kode inventaris" aria-label="Cari barang"></form>
+    <div class="topbar-right">
+      <div class="who"><span class="avatar">AF</span><span class="who-text">Ahmad Fauzi<small>Ketua</small></span></div>
+      <a class="btn btn-ghost btn-sm" href="login.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H5v16h4M16 8l4 4-4 4M20 12H9"/></svg>Keluar</a>
+    </div>
+  </header>
+  <main class="content" id="konten">
+<div class="page-head"><div><div class="crumbs"><a href="barang.html">Barang</a> / Tambah barang</div><h1>Tambah barang</h1><p>Lengkapi data barang. Kolom bertanda * wajib diisi.</p></div><div class="actions"></div></div>
+<form class="card" action="barang.html" method="post">
+ <div class="card-body"><div class="form-grid">
+  <div class="field"><label for="kode_inventaris">Kode inventaris <span class="req" aria-hidden="true">*</span></label><input type="text" id="kode_inventaris" name="kode_inventaris" placeholder="INV-ELK-005" value="" maxlength="20" required><span class="hint">Harus unik, maksimal 20 karakter.</span></div>
+  <div class="field"><label for="nama_barang">Nama barang <span class="req" aria-hidden="true">*</span></label><input type="text" id="nama_barang" name="nama_barang" placeholder="contoh: Proyektor" value="" maxlength="100" required></div>
+  <div class="field"><label for="id_kategori">Kategori <span class="req" aria-hidden="true">*</span></label><select id="id_kategori" name="id_kategori"><option value="1">Elektronik</option><option value="2">Furnitur</option><option value="3">Audio</option><option value="4">Perlengkapan acara</option><option value="5">Alat tulis</option></select><span class="hint">Umur pakai mengikuti kategori yang dipilih.</span></div>
+  <div class="field"><label for="satuan">Satuan <span class="req" aria-hidden="true">*</span></label><input type="text" id="satuan" name="satuan" placeholder="unit, buah, set" value="" maxlength="20" required></div>
+  <div class="field"><label for="jumlah_total">Jumlah total <span class="req" aria-hidden="true">*</span></label><input type="number" id="jumlah_total" name="jumlah_total" placeholder="0" value="" min="0" required><span class="hint">Seluruh unit yang dimiliki HIMA.</span></div>
+  <div class="field"><label for="jumlah_tersedia">Jumlah tersedia <span class="req" aria-hidden="true">*</span></label><input type="number" id="jumlah_tersedia" name="jumlah_tersedia" placeholder="0" value="" min="0" required><span class="hint">Unit yang bisa dipinjam saat ini.</span></div>
+  <div class="field"><label for="lokasi">Lokasi penyimpanan</label><input type="text" id="lokasi" name="lokasi" placeholder="contoh: Sekretariat" value="" maxlength="50"></div>
+  <div class="field"><label for="tanggal_perolehan">Tanggal perolehan</label><input type="date" id="tanggal_perolehan" name="tanggal_perolehan" placeholder="" value="" ></div>
+  <div class="field"><span class="label">Kondisi</span><div class="choice" role="radiogroup" aria-label="Kondisi"><label><input type="radio" name="kondisi" value="baik" checked> Baik</label><label><input type="radio" name="kondisi" value="rusak"> Rusak</label><label><input type="radio" name="kondisi" value="hilang"> Hilang</label></div></div>
+  <div class="field"><label for="biaya_sewa">Biaya sewa per hari</label><div class="input-prefix"><span>Rp</span><input type="number" id="biaya_sewa" name="biaya_sewa" placeholder="0" value="" min="0" step="500"></div><span class="hint">Isi 0 jika barang dipinjamkan gratis.</span></div>
+  <div class="field full"><label for="keterangan">Keterangan</label><textarea id="keterangan" name="keterangan" placeholder="Catatan tambahan, misalnya kelengkapan aksesori"></textarea></div>
+ </div></div>
+ <div class="card-foot"><a class="btn btn-ghost" href="barang.html">Batal</a><button class="btn" type="submit">Simpan barang</button></div>
+</form>
+  </main>
+</div>
+</div>
+</body>
+</html>

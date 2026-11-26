@@ -4,7 +4,8 @@ Prototipe Sistem Informasi Manajemen Inventaris Barang untuk HIMA Ilmu Komputer 
 Proyek akhir mata kuliah **Sistem Informasi Manajemen 2026 – Kelompok 5**.
 
 Fitur utama: data barang dan kategori, barang masuk/keluar, peminjaman dan pengembalian,
-pemeriksaan kondisi (PKM Service), arsip inventaris per periode kepengurusan, serta dasbor untuk BPH dan Ketua HIMA.
+pemeriksaan kondisi (PKM Service), arsip inventaris per periode kepengurusan, dasbor untuk BPH dan Ketua HIMA,
+serta **halaman publik** tempat peminjam melihat katalog barang dan mengirim pengajuan peminjaman tanpa login.
 
 **Teknologi:** PHP 8 (tanpa framework) · MySQL/MariaDB · Bootstrap 5 · XAMPP
 
@@ -44,6 +45,10 @@ pemeriksaan kondisi (PKM Service), arsip inventaris per periode kepengurusan, se
    Untuk XAMPP standar isinya tidak perlu diubah (user `root`, password kosong).
 
 5. **Buka di browser.** Alamatnya `http://localhost/inventaris-hima/`.
+   Pengunjung yang belum login diarahkan ke katalog publik. Pengurus masuk lewat tombol **Pengurus** di pojok kanan atas.
+
+> **Sudah punya database versi lama** (sebelum ada fitur pengajuan)? Cukup impor `migrasi_pengajuan.sql`
+> sekali. Tidak perlu impor ulang semuanya.
 
 ---
 
@@ -57,6 +62,19 @@ Semua akun memakai password **`hima2026`**.
 | `bph_demo`   | BPH         | Hanya melihat data dan laporan                    |
 | `ketua_demo` | Ketua HIMA  | Hanya melihat data dan dasbor                     |
 | `psdo_2025`  | PSDO lama   | **Ditolak**, karena periode 2025 sudah tidak aktif |
+
+**Peminjam tidak punya akun.** Peminjam memakai halaman publik:
+
+| Halaman       | Fungsi                                                                 |
+|---------------|------------------------------------------------------------------------|
+| `katalog.php` | Daftar barang berkondisi baik, jumlah tersedia saat ini, dan biaya sewa |
+| `ajukan.php`  | Form pengajuan peminjaman. Setelah dikirim, peminjam mendapat kode `AJ-XXXXXX` |
+| `status.php`  | Cek status pengajuan dengan kode + 4 digit terakhir nomor WhatsApp     |
+
+Pengajuan masuk ke menu **Pengajuan** milik PSDO. Kalau disetujui, pengajuan otomatis menjadi peminjaman
+dan stok langsung berkurang. Kalau ditolak, alasannya tampil di halaman cek status peminjam.
+
+Contoh untuk dicoba: kode `AJ-H9N3VB` dengan 4 digit `0006`.
 
 ---
 
@@ -119,8 +137,12 @@ inventaris-hima/
 ├── peminjaman/             ← index, tambah, detail (+ proses pengembalian)
 ├── pemeriksaan/            ← index, tambah (checklist), detail
 ├── arsip/                  ← index (buat arsip), detail (bandingkan)
+├── pengajuan/             ← index, detail (setujui / tolak pengajuan dari publik)
+├── katalog.php · ajukan.php · status.php   ← halaman publik untuk peminjam
+├── includes/public_header.php · public_footer.php  ← kerangka halaman publik
 ├── login.php · logout.php · index.php
-└── inventaris_hima.sql     ← struktur tabel + data contoh + view laporan
+├── inventaris_hima.sql     ← struktur tabel + data contoh + view laporan
+└── migrasi_pengajuan.sql   ← tambahan tabel pengajuan untuk database versi lama
 ```
 
 Hubungan file ke tabel database:
@@ -130,6 +152,7 @@ Hubungan file ke tabel database:
 | `barang/`      | `barang`, `kategori`                                 |
 | `transaksi/`   | `transaksi_barang`                                   |
 | `peminjaman/`  | `peminjam`, `peminjaman`, `detail_peminjaman`        |
+| `pengajuan/`, `ajukan.php`, `status.php` | `pengajuan`, `detail_pengajuan` (menjadi `peminjaman` jika disetujui) |
 | `pemeriksaan/` | `pemeriksaan`, `detail_pemeriksaan`                  |
 | `arsip/`       | `periode_kepengurusan`, `arsip_inventaris`           |
 | `laporan/`     | view `v_barang_umur`, `v_peminjaman_aktif`, `v_rekap_kategori`, `v_pendapatan_bulanan` |
@@ -204,14 +227,19 @@ Buka `includes/header.php` dan tambahkan satu baris di array `$menu`:
 Nama ikon bisa dicari di [icons.getbootstrap.com](https://icons.getbootstrap.com/).
 Lalu set `$active = 'kunci';` di halaman barunya.
 
-### 5.4 Mengubah tampilan
+### 5.4 Nomor WhatsApp CP
+
+Tombol WhatsApp di halaman publik memakai konstanta `CP_WHATSAPP` (format `62xxxxxxxxxx`) dan `CP_NAMA`
+di bagian atas `includes/auth.php`. Ganti ke nomor CP Biro PSDO yang asli sebelum dipakai.
+
+### 5.5 Mengubah tampilan
 
 - **Warna utama:** ubah `--brand` di baris atas `assets/style.css`.
 - **Komponen siap pakai:** `card`, `card-header`, `table`, `toolbar` (baris filter), `stat` (kartu angka),
   `pill pill-success/warning/danger` (label), `empty` (pesan tabel kosong).
 - Setelah mengubah CSS, tekan **Ctrl+F5** di browser supaya cache lama terhapus.
 
-### 5.5 Mengubah struktur database
+### 5.6 Mengubah struktur database
 
 Kalau menambah atau mengubah kolom, misalnya:
 
@@ -225,7 +253,7 @@ ALTER TABLE barang ADD COLUMN merek VARCHAR(50) NULL AFTER nama_barang;
 3. Beri tahu grup, supaya semua orang menjalankan `ALTER` yang sama atau mengimpor ulang.
 4. **Perbarui ERD dan kamus data di laporan (Bab 4.3).** Rubrik menilai konsistensi rancangan dengan prototipe.
 
-### 5.6 Menulis query
+### 5.7 Menulis query
 
 Selalu gunakan **prepared statement** untuk nilai yang berasal dari pengguna:
 
@@ -290,3 +318,16 @@ Hanya **PSDO** yang boleh mengubah data. Halaman yang mengubah data wajib memaka
 
 **Mengembalikan data contoh ke awal:** impor ulang `inventaris_hima.sql`. File ini otomatis menghapus
 tabel lama lalu membuatnya kembali.
+
+---
+
+## Anggota Kelompok 5
+
+| Nama                 | NIM        |
+|----------------------|------------|
+| Naila Aulia Rahma    | 2404130026 |
+| Selma Prakusya       | 2404130028 |
+| Lanang Arif Prabowo  | 2404130106 |
+| Fadli Nugraha Asfino | 2404130183 |
+
+Dosen pengampu: Ir. Jumanto, S.Kom., M.Cs.

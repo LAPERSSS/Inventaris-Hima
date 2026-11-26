@@ -7,6 +7,11 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once __DIR__ . '/../config/db.php';
 
+// nomor WhatsApp CP Biro PSDO untuk halaman publik (format 62xxxxxxxxxx)
+// boleh juga didefinisikan ulang di config/db.php
+if (!defined('CP_WHATSAPP')) define('CP_WHATSAPP', '6281234567890');
+if (!defined('CP_NAMA'))     define('CP_NAMA', 'CP Biro PSDO');
+
 // ---------- fungsi bantu tampilan ----------
 function e($s)        { return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
 function url($path='') { return BASE_URL . '/' . ltrim($path, '/'); }
@@ -136,6 +141,32 @@ function valid_date($d) {
     return $t && $t->format('Y-m-d') === $d;
 }
 
+// ---------- pengajuan peminjaman (halaman publik) ----------
+function buat_kode_pengajuan(PDO $pdo) {
+    $huruf = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';   // tanpa O/0/I/1 agar tidak tertukar
+    do {
+        $kode = 'AJ-';
+        for ($i = 0; $i < 6; $i++) $kode .= $huruf[random_int(0, strlen($huruf) - 1)];
+        $s = $pdo->prepare("SELECT COUNT(*) FROM pengajuan WHERE kode_pengajuan = ?");
+        $s->execute([$kode]);
+    } while ($s->fetchColumn() > 0);
+    return $kode;
+}
+
+function hanya_angka($s) { return preg_replace('/\D/', '', (string)$s); }
+
+function wa_link($pesan) {
+    return 'https://wa.me/' . CP_WHATSAPP . '?text=' . rawurlencode($pesan);
+}
+
+function jumlah_pengajuan_menunggu(PDO $pdo) {
+    try {
+        return (int)$pdo->query("SELECT COUNT(*) FROM pengajuan WHERE status = 'menunggu'")->fetchColumn();
+    } catch (PDOException $e) {
+        return 0;   // tabel belum dibuat (migrasi belum dijalankan)
+    }
+}
+
 // ---------- badge warna untuk kondisi/status ----------
 function badge($val) {
     $warna = [
@@ -143,6 +174,7 @@ function badge($val) {
         'dipinjam' => 'primary', 'kembali' => 'success', 'terlambat' => 'danger',
         'Layak' => 'success', 'Mendekati umur pakai' => 'warning', 'Lewat umur pakai' => 'danger',
         'masuk' => 'success', 'keluar' => 'secondary',
+        'menunggu' => 'warning', 'disetujui' => 'success', 'ditolak' => 'danger',
     ][$val] ?? 'secondary';
     $label = [
         'Lewat umur pakai' => 'Lewat umur', 'Mendekati umur pakai' => 'Hampir habis',

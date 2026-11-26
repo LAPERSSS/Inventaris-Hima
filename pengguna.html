@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pengguna | Inventaris HIMA Ilkom UNNES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<input type="checkbox" id="menu" class="menu-toggle" aria-label="Buka menu">
+<div class="app">
+<label class="scrim" for="menu"></label>
+<aside class="sidebar">
+  <a class="brand" href="index.html"><span class="brand-mark">IK</span><span class="brand-name">Inventaris HIMA<small>Ilmu Komputer UNNES</small></span></a>
+  <nav class="nav" aria-label="Menu utama"><div class="nav-group">Ringkasan</div><a href="index.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>Dashboard</span></a><div class="nav-group">Inventaris</div><a href="barang.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><span>Barang</span></a><a href="kategori.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1"/></svg><span>Kategori</span></a><a href="transaksi.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg><span>Transaksi barang</span></a><div class="nav-group">Peminjaman</div><a href="peminjaman.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M8 7V4h8v3M4 12h16"/></svg><span>Peminjaman</span></a><a href="peminjam.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 5a3.5 3.5 0 010 7M18 14.8c1.8.7 3 2.3 3.5 5.2"/></svg><span>Peminjam</span></a><div class="nav-group">Pemeriksaan</div><a href="pemeriksaan.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12l2 2 4-4"/></svg><span>Pemeriksaan</span></a><div class="nav-group">Organisasi</div><a href="periode.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Periode kepengurusan</span></a><a href="arsip.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9M10 13h4"/></svg><span>Arsip inventaris</span></a><a href="pengguna.html" aria-current="page"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-4 3.7-6 8-6s7.3 2 8 6"/></svg><span>Pengguna</span></a></nav>
+  <div class="side-foot"><strong>Periode 2026/2027</strong>Aktif sampai 31 Jan 2027</div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <label for="menu" class="menu-btn" aria-label="Menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></label>
+    <form class="search" role="search" action="barang.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input type="search" name="q" placeholder="Cari barang atau kode inventaris" aria-label="Cari barang"></form>
+    <div class="topbar-right">
+      <div class="who"><span class="avatar">AF</span><span class="who-text">Ahmad Fauzi<small>Ketua</small></span></div>
+      <a class="btn btn-ghost btn-sm" href="login.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H5v16h4M16 8l4 4-4 4M20 12H9"/></svg>Keluar</a>
+    </div>
+  </header>
+  <main class="content" id="konten">
+<div class="page-head"><div><h1>Pengguna</h1><p>Akun pengurus yang bisa mengelola sistem.</p></div><div class="actions"><a class="btn " href="#form-pengguna"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Tambah pengguna</a></div></div>
+<div class="card"><div class="table-wrap"><table><thead><tr><th>Nama</th><th>Username</th><th>Peran</th><th>Periode</th><th><span class="sr-only">Aksi</span></th></tr></thead><tbody><tr><td><span class="cell-main">Ahmad Fauzi</span></td><td>ahmad.fauzi</td><td><span class="badge b-ok">Ketua</span></td><td>2026/2027</td><td class="actions-cell"><a class="btn-icon" href="#form-pengguna" title="Ubah" aria-label="Ubah"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></a><a class="btn-icon danger" href="#hapus-u0" title="Hapus" aria-label="Hapus"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></a></td></tr><tr><td><span class="cell-main">Siti Nurhaliza</span></td><td>siti.nur</td><td><span class="badge b-info">BPH</span></td><td>2026/2027</td><td class="actions-cell"><a class="btn-icon" href="#form-pengguna" title="Ubah" aria-label="Ubah"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></a><a class="btn-icon danger" href="#hapus-u1" title="Hapus" aria-label="Hapus"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></a></td></tr><tr><td><span class="cell-main">Budi Santoso</span></td><td>budi.s</td><td><span class="badge b-warn">PSDO</span></td><td>2026/2027</td><td class="actions-cell"><a class="btn-icon" href="#form-pengguna" title="Ubah" aria-label="Ubah"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></a><a class="btn-icon danger" href="#hapus-u2" title="Hapus" aria-label="Hapus"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></a></td></tr><tr><td><span class="cell-main">Dewi Lestari</span></td><td>dewi.l</td><td><span class="badge b-warn">PSDO</span></td><td>2025/2026</td><td class="actions-cell"><a class="btn-icon" href="#form-pengguna" title="Ubah" aria-label="Ubah"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></a><a class="btn-icon danger" href="#hapus-u3" title="Hapus" aria-label="Hapus"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></a></td></tr></tbody></table></div></div>
+<div class="modal" id="form-pengguna" role="dialog" aria-modal="true" aria-labelledby="fu-t"><form class="modal-box" action="pengguna.html" method="post">
+ <div class="modal-head"><h3 id="fu-t">Akun pengguna</h3><a class="btn-icon" href="#" aria-label="Tutup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a></div>
+ <div class="modal-body"><div class="form-grid">
+  <div class="field full"><label for="nama">Nama lengkap <span class="req" aria-hidden="true">*</span></label><input type="text" id="nama" name="nama" placeholder="" value="" maxlength="100" required></div>
+  <div class="field"><label for="username">Username <span class="req" aria-hidden="true">*</span></label><input type="text" id="username" name="username" placeholder="" value="" maxlength="50" required autocomplete="off"></div>
+  <div class="field"><label for="password">Kata sandi <span class="req" aria-hidden="true">*</span></label><input type="password" id="password" name="password" placeholder="" value="" minlength="8" required autocomplete="new-password"><span class="hint">Minimal 8 karakter.</span></div>
+  <div class="field"><label for="peran">Peran <span class="req" aria-hidden="true">*</span></label><select id="peran" name="peran"><option value="psdo">PSDO</option><option value="bph">BPH</option><option value="ketua">Ketua</option></select></div>
+  <div class="field"><label for="id_periode">Periode <span class="req" aria-hidden="true">*</span></label><select id="id_periode" name="id_periode"><option value="1">2026/2027 (aktif)</option><option value="2">2025/2026</option><option value="3">2024/2025</option></select></div>
+ </div></div>
+ <div class="modal-foot"><a class="btn btn-ghost" href="#">Batal</a><button class="btn" type="submit">Simpan pengguna</button></div>
+</form></div><div class="modal" id="hapus-u0" role="dialog" aria-modal="true" aria-labelledby="hapus-u0-t"><div class="modal-box sm">
+<div class="modal-head"><h3 id="hapus-u0-t">Hapus data?</h3><a class="btn-icon" href="#" aria-label="Tutup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a></div>
+<div class="modal-body"><p>Akun <strong>Ahmad Fauzi</strong> akan dihapus dan tidak bisa masuk lagi.</p></div>
+<div class="modal-foot"><a class="btn btn-ghost" href="#">Batal</a><button class="btn btn-danger" type="button">Hapus</button></div></div></div><div class="modal" id="hapus-u1" role="dialog" aria-modal="true" aria-labelledby="hapus-u1-t"><div class="modal-box sm">
+<div class="modal-head"><h3 id="hapus-u1-t">Hapus data?</h3><a class="btn-icon" href="#" aria-label="Tutup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a></div>
+<div class="modal-body"><p>Akun <strong>Siti Nurhaliza</strong> akan dihapus dan tidak bisa masuk lagi.</p></div>
+<div class="modal-foot"><a class="btn btn-ghost" href="#">Batal</a><button class="btn btn-danger" type="button">Hapus</button></div></div></div><div class="modal" id="hapus-u2" role="dialog" aria-modal="true" aria-labelledby="hapus-u2-t"><div class="modal-box sm">
+<div class="modal-head"><h3 id="hapus-u2-t">Hapus data?</h3><a class="btn-icon" href="#" aria-label="Tutup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a></div>
+<div class="modal-body"><p>Akun <strong>Budi Santoso</strong> akan dihapus dan tidak bisa masuk lagi.</p></div>
+<div class="modal-foot"><a class="btn btn-ghost" href="#">Batal</a><button class="btn btn-danger" type="button">Hapus</button></div></div></div><div class="modal" id="hapus-u3" role="dialog" aria-modal="true" aria-labelledby="hapus-u3-t"><div class="modal-box sm">
+<div class="modal-head"><h3 id="hapus-u3-t">Hapus data?</h3><a class="btn-icon" href="#" aria-label="Tutup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a></div>
+<div class="modal-body"><p>Akun <strong>Dewi Lestari</strong> akan dihapus dan tidak bisa masuk lagi.</p></div>
+<div class="modal-foot"><a class="btn btn-ghost" href="#">Batal</a><button class="btn btn-danger" type="button">Hapus</button></div></div></div>
+  </main>
+</div>
+</div>
+</body>
+</html>

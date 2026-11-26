@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catat peminjaman | Inventaris HIMA Ilkom UNNES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<input type="checkbox" id="menu" class="menu-toggle" aria-label="Buka menu">
+<div class="app">
+<label class="scrim" for="menu"></label>
+<aside class="sidebar">
+  <a class="brand" href="index.html"><span class="brand-mark">IK</span><span class="brand-name">Inventaris HIMA<small>Ilmu Komputer UNNES</small></span></a>
+  <nav class="nav" aria-label="Menu utama"><div class="nav-group">Ringkasan</div><a href="index.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>Dashboard</span></a><div class="nav-group">Inventaris</div><a href="barang.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><span>Barang</span></a><a href="kategori.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1"/></svg><span>Kategori</span></a><a href="transaksi.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg><span>Transaksi barang</span></a><div class="nav-group">Peminjaman</div><a href="peminjaman.html" aria-current="page"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M8 7V4h8v3M4 12h16"/></svg><span>Peminjaman</span></a><a href="peminjam.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 5a3.5 3.5 0 010 7M18 14.8c1.8.7 3 2.3 3.5 5.2"/></svg><span>Peminjam</span></a><div class="nav-group">Pemeriksaan</div><a href="pemeriksaan.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12l2 2 4-4"/></svg><span>Pemeriksaan</span></a><div class="nav-group">Organisasi</div><a href="periode.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Periode kepengurusan</span></a><a href="arsip.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9M10 13h4"/></svg><span>Arsip inventaris</span></a><a href="pengguna.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-4 3.7-6 8-6s7.3 2 8 6"/></svg><span>Pengguna</span></a></nav>
+  <div class="side-foot"><strong>Periode 2026/2027</strong>Aktif sampai 31 Jan 2027</div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <label for="menu" class="menu-btn" aria-label="Menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></label>
+    <form class="search" role="search" action="barang.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input type="search" name="q" placeholder="Cari barang atau kode inventaris" aria-label="Cari barang"></form>
+    <div class="topbar-right">
+      <div class="who"><span class="avatar">AF</span><span class="who-text">Ahmad Fauzi<small>Ketua</small></span></div>
+      <a class="btn btn-ghost btn-sm" href="login.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H5v16h4M16 8l4 4-4 4M20 12H9"/></svg>Keluar</a>
+    </div>
+  </header>
+  <main class="content" id="konten">
+<div class="page-head"><div><div class="crumbs"><a href="peminjaman.html">Peminjaman</a> / Baru</div><h1>Catat peminjaman</h1><p>Pilih peminjam, tentukan tenggat, lalu tambahkan barang yang dipinjam.</p></div><div class="actions"></div></div>
+<form action="peminjaman.html" method="post" class="grid split">
+ <div class="stack">
+  <div class="card"><div class="card-head"><h2>Peminjam dan jadwal</h2></div><div class="card-body"><div class="form-grid">
+   <div class="field full"><label for="id_peminjam">Peminjam <span class="req" aria-hidden="true">*</span></label><select id="id_peminjam" name="id_peminjam"><option value="">Pilih peminjam</option><option value="1">Rina Septiani (BEM FMIPA UNNES)</option><option value="2">Dimas Prakoso (UKM Fotografi UNNES)</option><option value="3">Salsabila Ayu (HIMA Pendidikan Matematika)</option><option value="4">Bagas Wicaksono (Panitia Dies Natalis Prodi)</option></select><span class="hint">Belum terdaftar? <a href="peminjam.html#form-peminjam">Tambah peminjam baru</a></span></div>
+   <div class="field"><label for="tanggal_pinjam">Tanggal pinjam <span class="req" aria-hidden="true">*</span></label><input type="date" id="tanggal_pinjam" name="tanggal_pinjam" placeholder="" value="2026-11-26" required></div>
+   <div class="field"><label for="tanggal_jatuh_tempo">Tanggal jatuh tempo <span class="req" aria-hidden="true">*</span></label><input type="date" id="tanggal_jatuh_tempo" name="tanggal_jatuh_tempo" placeholder="" value="" required><span class="hint">Biaya sewa dihitung per hari.</span></div>
+  </div></div></div>
+  <div class="card"><div class="card-head"><div><h2>Barang yang dipinjam</h2><p>Kosongkan baris yang tidak dipakai.</p></div></div>
+   <div class="table-wrap"><table class="line-items"><thead><tr><th>Barang</th><th style="width:100px">Jumlah</th><th style="width:140px">Kondisi keluar</th><th class="num" style="width:120px">Subtotal</th></tr></thead><tbody><tr><td><select id="id_barang_0" name="id_barang_0"><option value="">Pilih barang</option><option value="1">INV-ELK-001 - Proyektor Epson EB-X500</option><option value="2">INV-ELK-002 - Kabel HDMI 10 meter</option><option value="3">INV-ELK-003 - Terminal listrik 5 lubang</option><option value="4">INV-ELK-004 - Laptop Lenovo IdeaPad</option><option value="5">INV-FUR-001 - Meja lipat</option><option value="6">INV-FUR-002 - Kursi lipat</option><option value="7">INV-AUD-001 - Speaker aktif portable</option><option value="8">INV-AUD-002 - Mikrofon wireless</option><option value="9">INV-ACR-001 - Banner X-stand</option><option value="10">INV-ACR-002 - Walkie talkie</option></select></td><td><input type="number" name="jumlah_0" min="1" placeholder="0" aria-label="Jumlah"></td><td><select id="kondisi_keluar_0" name="kondisi_keluar_0"><option value="baik">Baik</option><option value="rusak">Rusak</option></select></td><td class="num"><span class="cell-sub">Rp 0</span></td></tr><tr><td><select id="id_barang_1" name="id_barang_1"><option value="">Pilih barang</option><option value="1">INV-ELK-001 - Proyektor Epson EB-X500</option><option value="2">INV-ELK-002 - Kabel HDMI 10 meter</option><option value="3">INV-ELK-003 - Terminal listrik 5 lubang</option><option value="4">INV-ELK-004 - Laptop Lenovo IdeaPad</option><option value="5">INV-FUR-001 - Meja lipat</option><option value="6">INV-FUR-002 - Kursi lipat</option><option value="7">INV-AUD-001 - Speaker aktif portable</option><option value="8">INV-AUD-002 - Mikrofon wireless</option><option value="9">INV-ACR-001 - Banner X-stand</option><option value="10">INV-ACR-002 - Walkie talkie</option></select></td><td><input type="number" name="jumlah_1" min="1" placeholder="0" aria-label="Jumlah"></td><td><select id="kondisi_keluar_1" name="kondisi_keluar_1"><option value="baik">Baik</option><option value="rusak">Rusak</option></select></td><td class="num"><span class="cell-sub">Rp 0</span></td></tr><tr><td><select id="id_barang_2" name="id_barang_2"><option value="">Pilih barang</option><option value="1">INV-ELK-001 - Proyektor Epson EB-X500</option><option value="2">INV-ELK-002 - Kabel HDMI 10 meter</option><option value="3">INV-ELK-003 - Terminal listrik 5 lubang</option><option value="4">INV-ELK-004 - Laptop Lenovo IdeaPad</option><option value="5">INV-FUR-001 - Meja lipat</option><option value="6">INV-FUR-002 - Kursi lipat</option><option value="7">INV-AUD-001 - Speaker aktif portable</option><option value="8">INV-AUD-002 - Mikrofon wireless</option><option value="9">INV-ACR-001 - Banner X-stand</option><option value="10">INV-ACR-002 - Walkie talkie</option></select></td><td><input type="number" name="jumlah_2" min="1" placeholder="0" aria-label="Jumlah"></td><td><select id="kondisi_keluar_2" name="kondisi_keluar_2"><option value="baik">Baik</option><option value="rusak">Rusak</option></select></td><td class="num"><span class="cell-sub">Rp 0</span></td></tr><tr><td><select id="id_barang_3" name="id_barang_3"><option value="">Pilih barang</option><option value="1">INV-ELK-001 - Proyektor Epson EB-X500</option><option value="2">INV-ELK-002 - Kabel HDMI 10 meter</option><option value="3">INV-ELK-003 - Terminal listrik 5 lubang</option><option value="4">INV-ELK-004 - Laptop Lenovo IdeaPad</option><option value="5">INV-FUR-001 - Meja lipat</option><option value="6">INV-FUR-002 - Kursi lipat</option><option value="7">INV-AUD-001 - Speaker aktif portable</option><option value="8">INV-AUD-002 - Mikrofon wireless</option><option value="9">INV-ACR-001 - Banner X-stand</option><option value="10">INV-ACR-002 - Walkie talkie</option></select></td><td><input type="number" name="jumlah_3" min="1" placeholder="0" aria-label="Jumlah"></td><td><select id="kondisi_keluar_3" name="kondisi_keluar_3"><option value="baik">Baik</option><option value="rusak">Rusak</option></select></td><td class="num"><span class="cell-sub">Rp 0</span></td></tr></tbody></table></div></div>
+ </div>
+ <div class="stack">
+  <div class="card"><div class="card-head"><h2>Ringkasan</h2></div><div class="card-body">
+   <div class="notice"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg><span>Stok tersedia otomatis berkurang setelah peminjaman disimpan.</span></div>
+   <div class="summary"><div><span>Jumlah jenis barang</span><strong>0</strong></div><div><span>Lama pinjam</span><strong>0 hari</strong></div><div class="total"><span>Total biaya</span><span>Rp 0</span></div></div>
+   <div class="field"><label for="id_pengguna">Dicatat oleh</label><input type="text" id="id_pengguna" name="id_pengguna" placeholder="" value="Ahmad Fauzi" readonly></div>
+  </div>
+  <div class="card-foot"><a class="btn btn-ghost" href="peminjaman.html">Batal</a><button class="btn" type="submit">Simpan peminjaman</button></div></div>
+ </div>
+</form>
+  </main>
+</div>
+</div>
+</body>
+</html>

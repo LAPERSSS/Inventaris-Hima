@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard | Inventaris HIMA Ilkom UNNES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<input type="checkbox" id="menu" class="menu-toggle" aria-label="Buka menu">
+<div class="app">
+<label class="scrim" for="menu"></label>
+<aside class="sidebar">
+  <a class="brand" href="index.html"><span class="brand-mark">IK</span><span class="brand-name">Inventaris HIMA<small>Ilmu Komputer UNNES</small></span></a>
+  <nav class="nav" aria-label="Menu utama"><div class="nav-group">Ringkasan</div><a href="index.html" aria-current="page"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>Dashboard</span></a><div class="nav-group">Inventaris</div><a href="barang.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><span>Barang</span></a><a href="kategori.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1"/></svg><span>Kategori</span></a><a href="transaksi.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg><span>Transaksi barang</span></a><div class="nav-group">Peminjaman</div><a href="peminjaman.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M8 7V4h8v3M4 12h16"/></svg><span>Peminjaman</span></a><a href="peminjam.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 5a3.5 3.5 0 010 7M18 14.8c1.8.7 3 2.3 3.5 5.2"/></svg><span>Peminjam</span></a><div class="nav-group">Pemeriksaan</div><a href="pemeriksaan.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12l2 2 4-4"/></svg><span>Pemeriksaan</span></a><div class="nav-group">Organisasi</div><a href="periode.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Periode kepengurusan</span></a><a href="arsip.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9M10 13h4"/></svg><span>Arsip inventaris</span></a><a href="pengguna.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-4 3.7-6 8-6s7.3 2 8 6"/></svg><span>Pengguna</span></a></nav>
+  <div class="side-foot"><strong>Periode 2026/2027</strong>Aktif sampai 31 Jan 2027</div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <label for="menu" class="menu-btn" aria-label="Menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></label>
+    <form class="search" role="search" action="barang.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input type="search" name="q" placeholder="Cari barang atau kode inventaris" aria-label="Cari barang"></form>
+    <div class="topbar-right">
+      <div class="who"><span class="avatar">AF</span><span class="who-text">Ahmad Fauzi<small>Ketua</small></span></div>
+      <a class="btn btn-ghost btn-sm" href="login.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H5v16h4M16 8l4 4-4 4M20 12H9"/></svg>Keluar</a>
+    </div>
+  </header>
+  <main class="content" id="konten">
+
+<section class="hero">
+  <div>
+    <h1>Selamat datang, Ahmad</h1>
+    <p>Ada 1 peminjaman yang lewat jatuh tempo dan 2 barang perlu perbaikan. Mulai dari sini.</p>
+    <div class="actions"><a class="btn btn-amber" href="peminjaman-form.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Catat peminjaman</a><a class="btn btn-ghost" href="pemeriksaan-form.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12l2 2 4-4"/></svg>Mulai pemeriksaan</a></div>
+  </div>
+  <div>
+    <div class="stock-title"><span>Kondisi seluruh unit barang</span><strong>80 unit</strong></div>
+    <div class="stockbar" role="img" aria-label="Baik 71 unit, rusak 7 unit, hilang 6 unit"><span class="sb-ok" style="width:84%"></span><span class="sb-bad" style="width:8%"></span><span class="sb-lost" style="width:8%"></span></div>
+    <div class="legend"><span><i class="sb-ok"></i>Baik 71</span><span><i class="sb-bad"></i>Rusak 7</span><span><i class="sb-lost"></i>Hilang 6</span></div>
+  </div>
+</section>
+<section class="grid cols-4" style="margin-bottom:20px">
+  <div class="card stat"><span class="stat-label">Jenis barang</span><span class="stat-value">10</span><span class="stat-note">dalam 5 kategori</span></div>
+  <div class="card stat"><span class="stat-label">Unit tersedia</span><span class="stat-value">59</span><span class="stat-note">dari 80 unit total</span></div>
+  <div class="card stat"><span class="stat-label">Sedang dipinjam</span><span class="stat-value">2</span><span class="stat-note">peminjaman aktif</span></div>
+  <div class="card stat alert"><span class="stat-label">Terlambat dikembalikan</span><span class="stat-value">1</span><span class="stat-note">BEM FMIPA UNNES</span></div>
+</section>
+<section class="grid split">
+  <div class="card">
+    <div class="card-head"><div><h2>Peminjaman terbaru</h2></div><a class="btn btn-ghost btn-sm" href="peminjaman.html">Lihat semua</a></div>
+    <div class="table-wrap"><table><thead><tr><th>No.</th><th>Peminjam</th><th>Jatuh tempo</th><th>Status</th><th class="num">Total biaya</th></tr></thead><tbody><tr><td><span class="cell-main">#0012</span></td><td><span class="cell-main">Rina Septiani</span><div class="cell-sub">BEM FMIPA UNNES</div></td><td>25 Nov 2026</td><td><span class="badge b-bad">Terlambat</span></td><td class="num">Rp 235.000</td></tr><tr><td><span class="cell-main">#0011</span></td><td><span class="cell-main">Dimas Prakoso</span><div class="cell-sub">UKM Fotografi UNNES</div></td><td>29 Nov 2026</td><td><span class="badge b-info">Dipinjam</span></td><td class="num">Rp 180.000</td></tr><tr><td><span class="cell-main">#0010</span></td><td><span class="cell-main">Salsabila Ayu</span><div class="cell-sub">HIMA Pendidikan Matematika</div></td><td>13 Nov 2026</td><td><span class="badge b-ok">Kembali</span></td><td class="num">Rp 90.000</td></tr><tr><td><span class="cell-main">#0009</span></td><td><span class="cell-main">Bagas Wicaksono</span><div class="cell-sub">Panitia Dies Natalis Prodi</div></td><td>06 Nov 2026</td><td><span class="badge b-ok">Kembali</span></td><td class="num">Rp 410.000</td></tr></tbody></table></div>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2>Perlu perhatian</h2></div>
+    <ul class="mini-list">
+      <li><div><span class="cell-main">Laptop Lenovo IdeaPad</span><div class="cell-sub">Kondisi rusak, 1 unit</div></div><span class="badge b-warn">Rusak</span></li>
+      <li><div><span class="cell-main">Mikrofon wireless</span><div class="cell-sub">Kondisi rusak, 1 unit</div></div><span class="badge b-warn">Rusak</span></li>
+      <li><div><span class="cell-main">Walkie talkie</span><div class="cell-sub">Hilang, 6 unit</div></div><span class="badge b-bad">Hilang</span></li>
+      <li><div><span class="cell-main">Speaker aktif portable</span><div class="cell-sub">Stok tersedia habis</div></div><span class="badge b-mute">Habis</span></li>
+    </ul>
+  </div>
+</section>
+<section class="grid cols-2" style="margin-top:20px">
+  <div class="card">
+    <div class="card-head"><h2>Transaksi barang terakhir</h2><a class="btn btn-ghost btn-sm" href="transaksi.html">Lihat semua</a></div>
+    <div class="card-body"><ul class="timeline">
+      <li><i class="in"></i><div><strong>Masuk: Kursi lipat, 10 buah</strong><small>20 Nov 2026 oleh Siti Nurhaliza</small></div></li>
+      <li><i class="out"></i><div><strong>Keluar: Speaker aktif portable, 2 unit</strong><small>18 Nov 2026 oleh Ahmad Fauzi</small></div></li>
+      <li><i class="in"></i><div><strong>Masuk: Kabel HDMI 10 meter, 2 buah</strong><small>12 Nov 2026 oleh Siti Nurhaliza</small></div></li>
+    </ul></div>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2>Pemeriksaan terakhir</h2><a class="btn btn-ghost btn-sm" href="pemeriksaan.html">Lihat semua</a></div>
+    <ul class="mini-list">
+      <li><div><span class="cell-main">15 Nov 2026, insidental</span><div class="cell-sub">Diperiksa oleh Budi Santoso, 4 barang</div></div><span class="badge b-ok">Selesai</span></li>
+      <li><div><span class="cell-main">01 Okt 2026, PKM service</span><div class="cell-sub">Diperiksa oleh Budi Santoso, 10 barang</div></div><span class="badge b-ok">Selesai</span></li>
+    </ul>
+  </div>
+</section>
+  </main>
+</div>
+</div>
+</body>
+</html>

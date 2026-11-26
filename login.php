@@ -87,6 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button class="btn btn-primary w-100 py-2">Masuk</button>
       </form>
 
+      <a href="<?= url('katalog.php') ?>" class="btn btn-light w-100 mt-2"><i class="bi bi-grid me-1"></i>Mau pinjam barang? Lihat katalog</a>
+
       <div class="demo-box mt-4">
         <div class="fw-semibold mb-1"><i class="bi bi-info-circle me-1"></i>Akun uji coba</div>
         <code>psdo_demo</code> <code>bph_demo</code> <code>ketua_demo</code><br>

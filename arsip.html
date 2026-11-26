@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arsip inventaris | Inventaris HIMA Ilkom UNNES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<input type="checkbox" id="menu" class="menu-toggle" aria-label="Buka menu">
+<div class="app">
+<label class="scrim" for="menu"></label>
+<aside class="sidebar">
+  <a class="brand" href="index.html"><span class="brand-mark">IK</span><span class="brand-name">Inventaris HIMA<small>Ilmu Komputer UNNES</small></span></a>
+  <nav class="nav" aria-label="Menu utama"><div class="nav-group">Ringkasan</div><a href="index.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>Dashboard</span></a><div class="nav-group">Inventaris</div><a href="barang.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><span>Barang</span></a><a href="kategori.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1"/></svg><span>Kategori</span></a><a href="transaksi.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg><span>Transaksi barang</span></a><div class="nav-group">Peminjaman</div><a href="peminjaman.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M8 7V4h8v3M4 12h16"/></svg><span>Peminjaman</span></a><a href="peminjam.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 5a3.5 3.5 0 010 7M18 14.8c1.8.7 3 2.3 3.5 5.2"/></svg><span>Peminjam</span></a><div class="nav-group">Pemeriksaan</div><a href="pemeriksaan.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12l2 2 4-4"/></svg><span>Pemeriksaan</span></a><div class="nav-group">Organisasi</div><a href="periode.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Periode kepengurusan</span></a><a href="arsip.html" aria-current="page"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9M10 13h4"/></svg><span>Arsip inventaris</span></a><a href="pengguna.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-4 3.7-6 8-6s7.3 2 8 6"/></svg><span>Pengguna</span></a></nav>
+  <div class="side-foot"><strong>Periode 2026/2027</strong>Aktif sampai 31 Jan 2027</div>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <label for="menu" class="menu-btn" aria-label="Menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></label>
+    <form class="search" role="search" action="barang.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input type="search" name="q" placeholder="Cari barang atau kode inventaris" aria-label="Cari barang"></form>
+    <div class="topbar-right">
+      <div class="who"><span class="avatar">AF</span><span class="who-text">Ahmad Fauzi<small>Ketua</small></span></div>
+      <a class="btn btn-ghost btn-sm" href="login.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H5v16h4M16 8l4 4-4 4M20 12H9"/></svg>Keluar</a>
+    </div>
+  </header>
+  <main class="content" id="konten">
+<div class="page-head"><div><h1>Arsip inventaris</h1><p>Rekam jejak stok barang pada akhir tiap periode.</p></div><div class="actions"><a class="btn " href="#form-arsip"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9M10 13h4"/></svg>Arsipkan inventaris</a></div></div>
+<div class="card">
+ <form class="filters" action="arsip.html" method="get">
+  <div class="field"><label for="periode">Periode</label><select id="periode" name="periode"><option value="">Semua periode</option><option>2025/2026</option><option>2024/2025</option></select></div>
+  <div class="field"><label for="kondisi">Kondisi</label><select id="kondisi" name="kondisi"><option value="">Semua</option><option>Baik</option><option>Rusak</option><option>Hilang</option></select></div>
+  <button class="btn" type="submit">Terapkan</button>
+ </form>
+ <div class="table-wrap"><table><thead><tr><th>Periode</th><th>Barang</th><th class="num">Jumlah</th><th>Kondisi</th><th>Tanggal arsip</th></tr></thead><tbody><tr><td>2025/2026</td><td><span class="cell-main">Proyektor Epson EB-X500</span></td><td class="num">2</td><td><span class="badge b-ok">Baik</span></td><td>31 Jan 2026</td></tr><tr><td>2025/2026</td><td><span class="cell-main">Kursi lipat</span></td><td class="num">30</td><td><span class="badge b-ok">Baik</span></td><td>31 Jan 2026</td></tr><tr><td>2025/2026</td><td><span class="cell-main">Laptop Lenovo IdeaPad</span></td><td class="num">3</td><td><span class="badge b-warn">Rusak</span></td><td>31 Jan 2026</td></tr><tr><td>2025/2026</td><td><span class="cell-main">Mikrofon wireless</span></td><td class="num">4</td><td><span class="badge b-ok">Baik</span></td><td>31 Jan 2026</td></tr><tr><td>2024/2025</td><td><span class="cell-main">Meja lipat</span></td><td class="num">8</td><td><span class="badge b-ok">Baik</span></td><td>31 Jan 2025</td></tr></tbody></table></div>
+ <div class="table-foot"><span>Menampilkan 1-5 dari 24 arsip</span><div class="pager"><span class="off">&lsaquo;</span><span class="on">1</span><a href="#">2</a><a href="#">3</a><a href="#">&rsaquo;</a></div></div>
+</div>
+<div class="modal" id="form-arsip" role="dialog" aria-modal="true" aria-labelledby="fa-t"><form class="modal-box" action="arsip.html" method="post">
+ <div class="modal-head"><h3 id="fa-t">Arsipkan inventaris</h3><a class="btn-icon" href="#" aria-label="Tutup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a></div>
+ <div class="modal-body"><div class="stack" style="gap:16px">
+  <div class="notice warn"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg><span>Kondisi dan jumlah semua barang saat ini akan disalin ke arsip periode yang dipilih.</span></div>
+  <div class="field"><label for="id_periode">Periode <span class="req" aria-hidden="true">*</span></label><select id="id_periode" name="id_periode"><option value="1">2026/2027 (aktif)</option><option value="2">2025/2026</option><option value="3">2024/2025</option></select></div>
+  <div class="field"><label for="tanggal_arsip">Tanggal arsip <span class="req" aria-hidden="true">*</span></label><input type="date" id="tanggal_arsip" name="tanggal_arsip" placeholder="" value="2026-11-26" required></div>
+ </div></div>
+ <div class="modal-foot"><a class="btn btn-ghost" href="#">Batal</a><button class="btn" type="submit">Arsipkan sekarang</button></div>
+</form></div>
+  </main>
+</div>
+</div>
+</body>
+</html>
